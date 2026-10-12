@@ -92,6 +92,10 @@ var categorySelect = document.getElementById("category");
             displayWorks();
         });
     })
+
+ var latitude = 35.6895;
+ var logtitude = 139.6917
+ 
  var weatherUrl = 
  "https://api.open-meteo.com/v1/forecast"
 "?latitude=" + latitude +
