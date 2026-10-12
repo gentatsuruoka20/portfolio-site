@@ -92,6 +92,35 @@ var categorySelect = document.getElementById("category");
             displayWorks();
         });
     })
-        
-    
-    
+ var weatherUrl = 
+ "https://api.open-meteo.com/v1/forecast"
+"?latitude=" + latitude +
+"&longitude=" +longitude +
+"&current=temperature_2m,weather_code" +
+"&timezone=Asia%2FTokyo";
+
+fetch(weatherUrl)
+   .then(function(response) {
+     return response.json();
+   })
+   .then(function(data) {
+     var weatherCode = data.current.weather_code;
+   })
+   
+function showWeather(code) {
+    var icon = document.getElementById("weather-icon");
+
+    if(code === 0) {
+        icon.textContent = "☀";
+        document.body.className = "weather-sunny"
+    } else if (code >= 1 && code <= 3) {
+        icon.textContent = "☁";
+        document.body.className = "weater-cloudy";
+    } else if (code >= 51 && code <= 67) {
+        icon.textContent = "☂";
+        document.body.className ="weather-rainy"
+    } else {
+        icon.textContent = "☁";
+        document.body.classname = "weather-cloudy"
+    }
+}
