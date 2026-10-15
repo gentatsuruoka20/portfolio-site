@@ -95,9 +95,9 @@ var categorySelect = document.getElementById("category");
 
  var latitude = 35.6895;
  var logtitude = 139.6917
- 
+
  var weatherUrl = 
- "https://api.open-meteo.com/v1/forecast"
+ "https://api.open-meteo.com/v1/forecast" +
 "?latitude=" + latitude +
 "&longitude=" +longitude +
 "&current=temperature_2m,weather_code" +
@@ -109,6 +109,7 @@ fetch(weatherUrl)
    })
    .then(function(data) {
      var weatherCode = data.current.weather_code;
+     showWeather(weatherCode);
    })
    
 function showWeather(code) {
@@ -128,3 +129,4 @@ function showWeather(code) {
         document.body.classname = "weather-cloudy"
     }
 }
+

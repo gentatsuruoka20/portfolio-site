@@ -128,7 +128,7 @@ body.weather-sunny .site-header {
     background-color: #fffaf0
 }
 
-body.weater-cloudy{
+body.weather-cloudy{
     background-color: #dfe3e8;
 }
 
@@ -142,4 +142,9 @@ body.weather-rainy {
 
 body.weather-rainy .site-header {
     background-color: #cbd9e5;
+}
+
+body{
+    background-color: white;
+    transition: background-color 1s;
 }
