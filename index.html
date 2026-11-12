@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <title>印象深いもの</title>
         <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/p5@1.11.10/lib/p5.min.js"></script>
     </head>
     <body>
         <header>
@@ -17,22 +18,26 @@
         </header>
         <main>
             <section id="top">
-            <img src="media\IMG_2635.jpeg" width="100%">
+            <div class="top-image">
+            <img src="media\IMG_3092.jpeg">
+            <div id="p5"></div>
+            </div>
             <h1>印象深いものの写真たち</h1>
             <p id="weather-icon"> </p>
             </section>
             <section id="about">
-            <h3>About</h3>
-            <p>
+            <h3 >About</h3>
+            <p >
                 珍しいと思ったものなどを取り上げていくページ。<br>
                 期間や場所は問いません。
-            <p>
+            </p>
+            <p >
                 撮影者：ページ主本人<br>
                 ※注意：あんまりおもしろくないです
             </p>
             </section>
-            <section id="works">
-            <h3>Works</h3>
+            <section id="works" class="works">
+            <h3 >Works</h3>
             <div class ="work-controls">
                 <select id="category">
                     <option value="all">すべてのカテゴリ</option>
@@ -50,5 +55,7 @@
             <span>©　2026 totsukyogity</span> 
         </footer>
         <script src="works.js"></script>
+        <script src="script.js"></script>
+        <script src="sketch.js"></script>
     </body>
 </html>
