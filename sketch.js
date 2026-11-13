@@ -4,7 +4,7 @@ let y = 0;
 let expanding = false;
 
 function setup() {
-  createCanvas(600, 400);
+  createCanvas(windowWidth, windowHeight);
 }
 
 function draw() {
@@ -23,7 +23,34 @@ function draw() {
       expanding = false;
     }
   }
+
+  let speed;
+
+  if (mouseY < height / 2) {
+    // 上半分：上方向
+    speed = map(mouseY, 0, height / 2, -10, 0);
+  } else {
+    // 下半分：下方向
+    speed = map(mouseY, height / 2, height, 0, 10);
+  }
+
+  // ブラウザ画面そのものをスクロール
+  window.scrollBy({
+    top: speed,
+    left: 0,
+    behavior: "instant"
+  });
 }
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}
+  
+  
+
+  window.scrollBy(0, speed);
+
+
 
 function mousePressed() {
   x = mouseX;
@@ -31,3 +58,6 @@ function mousePressed() {
   r = 0;
   expanding = true;
 }
+
+
+
